@@ -22,6 +22,8 @@
 		72BCE9F22A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F12A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift */; };
 		72BCE9F42A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F32A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift */; };
 		72BCE9F62A0B750E00493AB9 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F52A0B750E00493AB9 /* PlayerEntity.swift */; };
+		72BCE9F82A0BFDE100493AB9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F72A0BFDE100493AB9 /* Renderer.swift */; };
+		72BCE9FB2A0C022900493AB9 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9FA2A0C022900493AB9 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		72BCE9F12A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLoop+SKSceneDelegate.swift"; sourceTree = "<group>"; };
 		72BCE9F32A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLoop+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
 		72BCE9F52A0B750E00493AB9 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
+		72BCE9F72A0BFDE100493AB9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		72BCE9F92A0C011100493AB9 /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		72BCE9FA2A0C022900493AB9 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		726C93172A0B015900190017 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				72BCE9FC2A0C07D700493AB9 /* Metal */,
 				726C93052A0AF61A00190017 /* SlashSlasherApp.swift */,
 				726C93072A0AF61A00190017 /* MainView.swift */,
 				726C93092A0AF61B00190017 /* Assets.xcassets */,
@@ -162,6 +168,16 @@
 				726C93152A0AF74000190017 /* MainGameScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		72BCE9FC2A0C07D700493AB9 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				72BCE9F72A0BFDE100493AB9 /* Renderer.swift */,
+				72BCE9F92A0C011100493AB9 /* Definitions.h */,
+				72BCE9FA2A0C022900493AB9 /* Shaders.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,12 +252,14 @@
 			files = (
 				726C93082A0AF61A00190017 /* MainView.swift in Sources */,
 				72BCE9F42A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift in Sources */,
+				72BCE9F82A0BFDE100493AB9 /* Renderer.swift in Sources */,
 				72BCE9F02A0B6F9200493AB9 /* GameLoop.swift in Sources */,
 				72BCE9E92A0B63C400493AB9 /* TransformComponent.swift in Sources */,
 				72BCE9F62A0B750E00493AB9 /* PlayerEntity.swift in Sources */,
 				726C93062A0AF61A00190017 /* SlashSlasherApp.swift in Sources */,
 				72BCE9F22A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift in Sources */,
 				72BCE9E12A0B608400493AB9 /* PhysicsMask.swift in Sources */,
+				72BCE9FB2A0C022900493AB9 /* Shaders.metal in Sources */,
 				726C931E2A0B01A200190017 /* Time.swift in Sources */,
 				726C93162A0AF74000190017 /* MainGameScene.swift in Sources */,
 				72BCE9E52A0B614B00493AB9 /* PhysicsComponent.swift in Sources */,
@@ -392,6 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = codes.brunomyrrha.SlashSlasher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = SlashSlasher/App/Metal/Definitions.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = codes.brunomyrrha.SlashSlasher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = SlashSlasher/App/Metal/Definitions.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

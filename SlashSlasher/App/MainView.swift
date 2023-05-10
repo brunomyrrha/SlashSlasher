@@ -6,27 +6,34 @@
 //
 
 import SwiftUI
-import SpriteKit
+import MetalKit
 
-struct MainView: View {
+struct MainView: UIViewRepresentable {
     
-    private func gameScene(size: CGSize) -> SKScene {
-        let gameScene = MainGameScene()
-        gameScene.size = size
-        gameScene.scaleMode = .resizeFill
-        gameScene.backgroundColor = .clear
-        
-        return gameScene
+    func makeCoordinator() -> Renderer {
+        Renderer(self)
     }
     
-    var body: some View {
-        VStack {
-            GeometryReader { geo in
-                SpriteView(scene: gameScene(size: geo.size))
-                    .ignoresSafeArea()
-            }
+    func makeUIView(context: UIViewRepresentableContext<MainView>) -> MTKView {
+        let mtkView = MTKView()
+        mtkView.delegate = context.coordinator
+        mtkView.preferredFramesPerSecond = 60
+        mtkView.enableSetNeedsDisplay = true
+     
+        if let metalDevice = MTLCreateSystemDefaultDevice() {
+            mtkView.device = metalDevice
         }
+        
+        mtkView.framebufferOnly = false
+        mtkView.drawableSize = mtkView.frame.size
+        
+        return mtkView
     }
+    
+    func updateUIView(_ uiView: MTKView, context: UIViewRepresentableContext<MainView>) {
+        
+    }
+    
 }
 
 struct MainView_Previews: PreviewProvider {
