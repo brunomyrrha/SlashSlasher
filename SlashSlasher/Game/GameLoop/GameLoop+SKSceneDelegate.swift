@@ -15,7 +15,9 @@ extension GameLoop: SKSceneDelegate {
     }
     
     func didEvaluateActions(for scene: SKScene) {
-        
+        entity.node.position = InputHandler.instance.destination
+        entity.node.xScale = InputHandler.instance.pinch
+        entity.node.yScale = InputHandler.instance.pinch
     }
     
     func didSimulatePhysics(for scene: SKScene) {

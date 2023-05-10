@@ -14,10 +14,14 @@ class GameLoop: NSObject {
     var nodes: AnyPublisher<SKNode, Never> { _nodes.eraseToAnyPublisher() }
     private let _nodes = PassthroughSubject<SKNode, Never>()
     
+    let camera = SKCameraNode()
+    let entity = PlayerEntity()
+    
     // MARK: Public properties
     
     func start() {
-        let node = SKSpriteNode(texture: nil, color: .blue, size: .init(width: 20, height: 20))
-        _nodes.send(node)
+        
+        _nodes.send(camera)
+        _nodes.send(entity.node)
     }
 }

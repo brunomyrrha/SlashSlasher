@@ -29,6 +29,8 @@
 		72BCEA032A0C0F8800493AB9 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCEA022A0C0F8800493AB9 /* Camera.swift */; };
 		72BCEA052A0C0FBE00493AB9 /* SimpleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCEA042A0C0FBE00493AB9 /* SimpleComponent.swift */; };
 		72BCEA072A0C1D7C00493AB9 /* Matrix4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCEA062A0C1D7C00493AB9 /* Matrix4x4.swift */; };
+		72BCEA092A0C3C4100493AB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCEA082A0C3C4100493AB9 /* MainView.swift */; };
+		72BCEA0B2A0C3F4400493AB9 /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCEA0A2A0C3F4400493AB9 /* InputHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		72BCEA022A0C0F8800493AB9 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		72BCEA042A0C0FBE00493AB9 /* SimpleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleComponent.swift; sourceTree = "<group>"; };
 		72BCEA062A0C1D7C00493AB9 /* Matrix4x4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix4x4.swift; sourceTree = "<group>"; };
+		72BCEA082A0C3C4100493AB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		72BCEA0A2A0C3F4400493AB9 /* InputHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +110,9 @@
 		726C93172A0B015900190017 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				72BCE9FF2A0C0F4B00493AB9 /* Model */,
 				72BCE9FC2A0C07D700493AB9 /* Metal */,
 				726C93052A0AF61A00190017 /* SlashSlasherApp.swift */,
-				726C93072A0AF61A00190017 /* MetalView.swift */,
+				72BCEA082A0C3C4100493AB9 /* MainView.swift */,
 				726C93092A0AF61B00190017 /* Assets.xcassets */,
 				726C930B2A0AF61B00190017 /* Preview Content */,
 			);
@@ -135,6 +138,7 @@
 				726C931D2A0B01A200190017 /* Time.swift */,
 				72BCE9E02A0B608400493AB9 /* PhysicsMask.swift */,
 				72BCEA062A0C1D7C00493AB9 /* Matrix4x4.swift */,
+				72BCEA0A2A0C3F4400493AB9 /* InputHandler.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -185,6 +189,8 @@
 		72BCE9FC2A0C07D700493AB9 /* Metal */ = {
 			isa = PBXGroup;
 			children = (
+				72BCE9FF2A0C0F4B00493AB9 /* Model */,
+				726C93072A0AF61A00190017 /* MetalView.swift */,
 				72BCE9F72A0BFDE100493AB9 /* Renderer.swift */,
 				72BCE9F92A0C011100493AB9 /* Definitions.h */,
 				72BCE9FA2A0C022900493AB9 /* Shaders.metal */,
@@ -275,6 +281,7 @@
 			files = (
 				72BCE9FE2A0C0EA500493AB9 /* TriangleMesh.swift in Sources */,
 				72BCEA012A0C0F5700493AB9 /* RenderScene.swift in Sources */,
+				72BCEA092A0C3C4100493AB9 /* MainView.swift in Sources */,
 				726C93082A0AF61A00190017 /* MetalView.swift in Sources */,
 				72BCE9F42A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift in Sources */,
 				72BCE9F82A0BFDE100493AB9 /* Renderer.swift in Sources */,
@@ -286,6 +293,7 @@
 				726C93062A0AF61A00190017 /* SlashSlasherApp.swift in Sources */,
 				72BCE9F22A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift in Sources */,
 				72BCE9E12A0B608400493AB9 /* PhysicsMask.swift in Sources */,
+				72BCEA0B2A0C3F4400493AB9 /* InputHandler.swift in Sources */,
 				72BCE9FB2A0C022900493AB9 /* Shaders.metal in Sources */,
 				72BCEA052A0C0FBE00493AB9 /* SimpleComponent.swift in Sources */,
 				726C931E2A0B01A200190017 /* Time.swift in Sources */,
