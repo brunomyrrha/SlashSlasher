@@ -11,8 +11,7 @@ import SpriteKit
 struct MainView: View {
     
     private func gameScene(size: CGSize) -> SKScene {
-        print(size)
-        let gameScene = GameScene()
+        let gameScene = MainGameScene()
         gameScene.size = size
         gameScene.scaleMode = .resizeFill
         gameScene.backgroundColor = .clear

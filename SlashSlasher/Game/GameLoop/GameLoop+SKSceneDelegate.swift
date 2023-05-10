@@ -1,5 +1,5 @@
 //
-//  SceneDelegate.swift
+//  GameLoop+SKSceneDelegate.swift
 //  SlashSlasher
 //
 //  Created by Bruno Diniz on 10/05/2023.
@@ -7,8 +7,7 @@
 
 import GameplayKit
 
-class SceneDelegate: NSObject, SKSceneDelegate {
-    
+extension GameLoop: SKSceneDelegate {
     func update(_ currentTime: TimeInterval, for scene: SKScene) {
         Time.update(currentTime)
     }
@@ -22,7 +21,6 @@ class SceneDelegate: NSObject, SKSceneDelegate {
     }
     
     func didFinishUpdate(for scene: SKScene) {
-
+        
     }
-    
 }

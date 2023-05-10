@@ -7,8 +7,7 @@
 
 import Foundation
 
-final class Math {
-    private init() { }
+enum Math {
     
     static func lerp<T: FloatingPoint>(min: T, max: T, by interpolation: T) -> T {
         if interpolation <= T(0) { return min }
