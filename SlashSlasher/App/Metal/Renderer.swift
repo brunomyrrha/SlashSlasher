@@ -9,13 +9,14 @@ import MetalKit
 
 class Renderer: NSObject, MTKViewDelegate {
     
-    private let parent: MainView
+    private let parent: MetalView
     private var metalDevice: MTLDevice!
     private var metalCommandQueue: MTLCommandQueue!
     private var pipelineState: MTLRenderPipelineState
-    private let vertexBuffer: MTLBuffer
+    private var scene: RenderScene
+    private let mesh: TriangleMesh
     
-    init(_ parent: MainView) {
+    init(_ parent: MetalView) {
         self.parent = parent
         
         if let metalDevice = MTLCreateSystemDefaultDevice() {
@@ -33,13 +34,8 @@ class Renderer: NSObject, MTKViewDelegate {
         
         self.pipelineState = try! metalDevice.makeRenderPipelineState(descriptor: pipelineDescriptor)
         
-        let vertices = [
-            Vertex(position: [-1, -1], color: [1,0,0,1]),
-            Vertex(position: [1, -1], color: [0,1,0,1]),
-            Vertex(position: [0, 1], color: [0,0,1,1])
-        ]
-        
-        vertexBuffer = metalDevice.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<Vertex>.stride, options: [])!
+        self.mesh = TriangleMesh(device: metalDevice)
+        self.scene = RenderScene()
         
         super.init()
     }
@@ -49,6 +45,9 @@ class Renderer: NSObject, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
+        
+        scene.update()
+        
         guard let drawable = view.currentDrawable else { return }
         
         let commandBuffer = metalCommandQueue.makeCommandBuffer()
@@ -60,9 +59,16 @@ class Renderer: NSObject, MTKViewDelegate {
         
         let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor!)
         
-        renderEncoder?.setRenderPipelineState(pipelineState)
-        renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+        scene.triangles.forEach {
+            var modelMatrix = Matrix4x4.createFromRotation($0.eulers)
+            modelMatrix *= Matrix4x4.createFromTranslation($0.position)
+            
+            renderEncoder?.setVertexBytes(&modelMatrix, length: MemoryLayout<matrix_float4x4>.stride, index: 1)
+            
+            renderEncoder?.setRenderPipelineState(pipelineState)
+            renderEncoder?.setVertexBuffer(mesh.buffer, offset: 0, index: 0)
+            renderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+        }
         
         renderEncoder?.endEncoding()
         

@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  MetalView.swift
 //  SlashSlasher
 //
 //  Created by Bruno Diniz on 09/05/2023.
@@ -8,13 +8,13 @@
 import SwiftUI
 import MetalKit
 
-struct MainView: UIViewRepresentable {
+struct MetalView: UIViewRepresentable {
     
     func makeCoordinator() -> Renderer {
         Renderer(self)
     }
     
-    func makeUIView(context: UIViewRepresentableContext<MainView>) -> MTKView {
+    func makeUIView(context: UIViewRepresentableContext<MetalView>) -> MTKView {
         let mtkView = MTKView()
         mtkView.delegate = context.coordinator
         mtkView.preferredFramesPerSecond = 60
@@ -26,18 +26,19 @@ struct MainView: UIViewRepresentable {
         
         mtkView.framebufferOnly = false
         mtkView.drawableSize = mtkView.frame.size
+        mtkView.isPaused = false
         
         return mtkView
     }
     
-    func updateUIView(_ uiView: MTKView, context: UIViewRepresentableContext<MainView>) {
+    func updateUIView(_ uiView: MTKView, context: UIViewRepresentableContext<MetalView>) {
         
     }
     
 }
 
-struct MainView_Previews: PreviewProvider {
+struct MetalView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MetalView()
     }
 }
