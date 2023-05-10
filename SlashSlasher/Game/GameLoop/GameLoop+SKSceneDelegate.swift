@@ -8,6 +8,8 @@
 import GameplayKit
 
 extension GameLoop: SKSceneDelegate {
+    // MARK: Public properties
+    
     func update(_ currentTime: TimeInterval, for scene: SKScene) {
         Time.update(currentTime)
     }

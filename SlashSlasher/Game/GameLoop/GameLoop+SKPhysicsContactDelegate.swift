@@ -8,6 +8,8 @@
 import GameplayKit
 
 extension GameLoop: SKPhysicsContactDelegate {
+    // MARK: Public properties
+    
     func didBegin(_ contact: SKPhysicsContact) {
         
     }

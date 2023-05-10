@@ -21,6 +21,7 @@
 		72BCE9F02A0B6F9200493AB9 /* GameLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9EF2A0B6F9200493AB9 /* GameLoop.swift */; };
 		72BCE9F22A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F12A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift */; };
 		72BCE9F42A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F32A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift */; };
+		72BCE9F62A0B750E00493AB9 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BCE9F52A0B750E00493AB9 /* PlayerEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		72BCE9EF2A0B6F9200493AB9 /* GameLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLoop.swift; sourceTree = "<group>"; };
 		72BCE9F12A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLoop+SKSceneDelegate.swift"; sourceTree = "<group>"; };
 		72BCE9F32A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLoop+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
+		72BCE9F52A0B750E00493AB9 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +76,6 @@
 				726C931F2A0B01D200190017 /* Convenience */,
 				726C93182A0B017000190017 /* Game */,
 				726C93172A0B015900190017 /* App */,
-				726C93092A0AF61B00190017 /* Assets.xcassets */,
-				726C930B2A0AF61B00190017 /* Preview Content */,
 			);
 			path = SlashSlasher;
 			sourceTree = "<group>";
@@ -93,6 +93,8 @@
 			children = (
 				726C93052A0AF61A00190017 /* SlashSlasherApp.swift */,
 				726C93072A0AF61A00190017 /* MainView.swift */,
+				726C93092A0AF61B00190017 /* Assets.xcassets */,
+				726C930B2A0AF61B00190017 /* Preview Content */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 		72BCE9E22A0B610600493AB9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				72BCE9F52A0B750E00493AB9 /* PlayerEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				72BCE9F42A0B721500493AB9 /* GameLoop+SKPhysicsContactDelegate.swift in Sources */,
 				72BCE9F02A0B6F9200493AB9 /* GameLoop.swift in Sources */,
 				72BCE9E92A0B63C400493AB9 /* TransformComponent.swift in Sources */,
+				72BCE9F62A0B750E00493AB9 /* PlayerEntity.swift in Sources */,
 				726C93062A0AF61A00190017 /* SlashSlasherApp.swift in Sources */,
 				72BCE9F22A0B71DF00493AB9 /* GameLoop+SKSceneDelegate.swift in Sources */,
 				72BCE9E12A0B608400493AB9 /* PhysicsMask.swift in Sources */,
@@ -370,7 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlashSlasher/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlashSlasher/App/Preview Content\"";
 				DEVELOPMENT_TEAM = M7WGV6L4K2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -400,7 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlashSlasher/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SlashSlasher/App/Preview Content\"";
 				DEVELOPMENT_TEAM = M7WGV6L4K2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
